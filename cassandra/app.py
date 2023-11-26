@@ -36,7 +36,7 @@ def print_menu():
         7: "Exit",
     }
 
-    title = "Flight Management System"
+    title = "Viva Aerocamion Management System"
     subtitle = "Select an option:"
     menu_items = "\n".join([f"[bold cyan]{key}[/bold cyan]: {mm_options[key]}" for key in mm_options.keys()])
     menu = f"{subtitle}\n{menu_items}"
