@@ -20,7 +20,8 @@ def print_menu():
         3: "Show adult passengers by airport staying in a hotel",
         4: "Show qualified passengers by airport",
         5: "Show best choices",
-        6: "Exit",
+        6: "Drop data",
+        7: "Exit",
     }
 
     title = "Viva Aerocamion Management System"
@@ -72,6 +73,9 @@ def main():
             model.get_best_choices_airport(client)
             input()
         if option == 6:
+            model.drop_all(client)
+            console.print("[bold red]Data dropped[/bold red]")
+        if option == 7:
             close_client_stub(client_stub)
             exit(0)
 

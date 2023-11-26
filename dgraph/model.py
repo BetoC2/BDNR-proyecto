@@ -55,7 +55,7 @@ def create_data(client):
                     "TAKES": [
                         {
                             "dgraph.type": "Flight",
-                            "airport": fr,
+                            "airport": to,
                             "reason": reason,
                             "stay": stay,
                             "transit": transit
@@ -68,9 +68,9 @@ def create_data(client):
 
         # Commit transaction.
         commit_response = txn.commit()
-        print(f"Commit Response: {commit_response}")
+        print(f"Commit Response: {commit_response}", end="")
 
-        print(f"UIDs: {response.uids}")
+        print(f"[bold blue]Data created[/bold blue]: {len(response.uids)}")
     finally:
         # Clean up.
         txn.discard()

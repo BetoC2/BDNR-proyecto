@@ -1,3 +1,4 @@
+rich
 cassandra-driver
 time_uuid
-rich
+pydgraph
