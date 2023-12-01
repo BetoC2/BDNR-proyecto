@@ -51,7 +51,9 @@ CREATE_FLIGHTS_MONTH_REASON_TABLE = """
     ) WITH CLUSTERING ORDER BY (month ASC, transit ASC, reason ASC);
 """
 
-
+CREATE_INDEX_MONTH = """
+    CREATE INDEX IF NOT EXISTS ON flights_by_a_m_r (month)
+"""
 
 SELECT_ALL_FLIGHTS = "SELECT * FROM flights_by_a_m"
 SELECT_ALL_FLIGHTS_AIRPORT = "SELECT * FROM flights_by_a_m WHERE airport = ?"
@@ -78,6 +80,7 @@ def create_schema(session):
     log.info("Creating model schema")
     session.execute(CREATE_FLIGHTS_MONTH_TABLE)
     session.execute(CREATE_FLIGHTS_MONTH_REASON_TABLE)
+    session.execute(CREATE_INDEX_MONTH)
     
 def get_all_flights(session):
     log.info("Getting all flights")

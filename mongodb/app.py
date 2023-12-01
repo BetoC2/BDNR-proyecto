@@ -58,12 +58,14 @@ def main():
             console.print("\n[bold blue]Airports with connection flights:[/bold blue]")
             for destination in unique_destinations:
                 console.print(f"[green]{destination}[/green]")
+            input()
 
         elif choice == "2":
             connection_counts = count_connections_by_airport()
             console.print("\n[bold blue]Connection flights by airport:[/bold blue]")
             for entry in connection_counts:
                 console.print(f"[cyan]{entry['_id']}:[/cyan] [yellow]{entry['count']}[/yellow] connection flights")
+            input()
 
         elif choice == "3":
             wait_averages = average_wait_by_airport()
@@ -71,6 +73,7 @@ def main():
             for entry in wait_averages:
                 average_wait_rounded = round(entry['average_wait'], 2)
                 console.print(f"[cyan]{entry['_id']}:[/cyan] [yellow]{average_wait_rounded}[/yellow] minutes")
+            input()
 
         elif choice == "4":
             age_averages = average_age_by_airport()
@@ -78,6 +81,7 @@ def main():
             for entry in age_averages:
                 average_age_rounded = round(entry['average_age'])
                 console.print(f"[cyan]{entry['_id']}:[/cyan] [yellow]{average_age_rounded}[/yellow] years")
+            input()
 
         elif choice == "5":
             console.print("[bold magenta]Thanks for using Viva Aerocamion[/bold magenta]")
